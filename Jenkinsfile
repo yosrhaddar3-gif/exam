@@ -24,7 +24,8 @@ pipeline {
         stage('Test Pipeline') {
             steps {
                 echo 'Pipeline Windows prêt pour examen'
-            }
+            }// Jenkinsfile Windows corrigé pour examen
+
         }
     }
 }
