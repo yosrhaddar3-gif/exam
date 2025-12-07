@@ -4,27 +4,28 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/yosrhaddar3-gif/exam.git'  // <-- ton fork
+                git 'https://github.com/yosrhaddar3-gif/exam.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t todo-app .'
+                bat 'docker build -t todo-app .'
             }
         }
     }
 }
+
 
