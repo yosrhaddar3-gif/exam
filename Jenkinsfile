@@ -1,32 +1,36 @@
 pipeline {
     agent any
-
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/yosrhaddar3-gif/exam.git' // ton fork
+                git 'https://github.com/yosrhaddar3-gif/exam.git'
             }
         }
-
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'  // ou 'sh' si ton agent est Linux
+                bat 'npm install'
             }
         }
-
         stage('Run Tests') {
             steps {
-                bat 'npm test'     // ou 'sh' si Linux
+                bat 'npm test'
             }
         }
-
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t todo-app .'  // ou 'sh' si Linux
+                bat 'docker build -t todo-app .'
+            }
+        }
+        stage('Test Pipeline') {
+            steps {
+                echo 'Pipeline Windows prêt pour examen'
             }
         }
     }
 }
+
+
+
 
 
 
