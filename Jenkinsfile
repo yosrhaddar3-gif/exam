@@ -5,8 +5,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/yosrhaddar3-gif/app2.git'
+                git branch: 'master',
+                    url: 'https://github.com/yosrhaddar3-gif/exam.git'
             }
         }
 
